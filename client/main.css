@@ -1,9 +1,52 @@
+
+
 p {
   font-family: Verdana;
 }
-.container {
+/*.container {
 
   background-color:#f3671f;
   border-radius: 15px 10px 15px 10px;
   border-style: groove;
+}*/
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
+
+
+h3{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+.liens{
+  font-family: Verdana;
+  color:#d05c62;
+}
+
+.liens:hover{
+  font-family: Verdana;
+color:#f3671f
+}
+
+
+
+.btn{
+background-color: #f3671f;
+color:white;
+}
+
+.btn:hover{
+  background-color: #d05c62;
+  color:white;
+}
+
+.lol{
+  margin-top: 10px;
+}
+
+
+

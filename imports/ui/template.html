@@ -7,16 +7,22 @@
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-light p-4">
 
-                    <!-- Bouton pour ce connecter-->
+                    <!-- Bouton pour se connecter-->
                     <div class="container" style="width:25em;">
                     {{> atForm}}
                     {{#if currentUser}}
+                    <div class="d-flex justify-content-center ">
                     {{> atNavButton}}
+                    </div>
                     {{/if}}
                     
                     </div>
-                    <h5 class="text h4">Collapsed content</h5>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
+
+                    
+                    <ul> <a href="#jumbo" class="liens nav-link">Présentation</a></ul>
+                    <ul><a href="#ateliers" class="liens nav-link">Nos ateliers</a></ul>
+                    
+
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark">
@@ -69,24 +75,35 @@
 
     <template name="jumbo">
 
-            <div class="jumbotron">
+            <div class="jumbotron" id="jumbo">
                 
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <h1 class="display-4">Bienvenue dans nos ateliers de cuisine</h1>
+                <h3>Découvrez les ateliers de cours de cuisine de L'atelier des Chefs.</h3>
+                   <p>La cuisine est un spectacle...</p>
+                   <p>L'atelier des Chefs lui offre une scène au coeur de 
+                    lieux superbes et innovants : des cuisines où tout est transparence et technologie, 
+                    pour un spectacle culinaire permanent. </p>
+                    <p>Nos ateliers culinaires sont des lieux d'échange 
+                    autour de la cuisine et de ses plaisirs.</p>
                 <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                
                
                 <!-- Bouton pour le collapse -->
                
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapse0" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Collapse
+                <a class="btn" data-toggle="collapse" href="#collapse0" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Lire la suite
                 </a>
 
                 <!-- Le collapse -->
 
                     <div class="collapse" id="collapse0">
                         <div class="card card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        <p>Apprenti cordon bleu en recherche de perfectionnement ou débutant, 
+                            Chef du jour ou cuisinier pressé du déjeuner, petit ou grand, nos cours 
+                            s'adaptent à tous les profils.</p>
+                                <p>Curieux, épicuriens, gourmands et gourmets, vous trouverez tous la 
+                                formule faite pour vous. Venez mettre la main à la pâte et vivre un pur 
+                                moment de gourmandise.</p>
                         </div>
                     </div>
             </div>
@@ -99,10 +116,11 @@
 
             <img src="images/imageat.jpg" alt="Atelier" width="100%">
 
-            <div class="jumbotron jumbotron-fluid" style="background-color: #d05c62;">
+            <div class="jumbotron jumbotron-fluid"  id="ateliers">
                 <div class="container">
                     <h1 class="display-4">Atelier</h1>
-                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    <p class="lead">Sélectionnez parmis nos différents ateliers 
+                        que nous proposons pour réussir vos recettes préférées.</p>
                     
                 <!-- Bouton qui ouvre la liste des ateliers par collapse -->
 
@@ -117,18 +135,17 @@
 <li>{{noM}} {{prenoM}} <button class="deleted">&times;</button>
     
 </li>
-
-
-
-            
+      
     </template> 
 
+    
 <template name="cartes">
-
+<div class="container col-4">
+        <div class="card" style="width: 18rem;">
                 {{#if currentUser}}
                 <button class="suppr">&times;</button>
                 <button type="button" class="btn-edit-modif btn-primary" data-toggle="modal" data-target="#modalModif" data-id="{{_id}}">
-                    modif
+                    Modifier
                   </button>
                 {{/if}}
             <img class="card-img-top" src="{{Picture}}" alt="Card image cap" height="150px">
@@ -138,9 +155,9 @@
                 <button type="button" class="btn btn-primary" data-toggle="collapse" href="#collapseExample">
                         S'inscrire
                     </button>
-
+                </div>
             </div>
-            
-
+        </div>
+       
 
 </template>

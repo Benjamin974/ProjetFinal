@@ -1,3 +1,9 @@
+
+<head>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+</head>
+
+
 <body>
 
   <!-- Space-bar qui sert à afficher les templates -->
@@ -8,33 +14,39 @@
 
 
 {{> atelier}}
-<div class="container">
+<div class="containe" style="background-color:#d05c62">
+    <h2 class="modal-title" id="titre" style="text-align:center; padding-top:20px; color:white;" >Recherchez un atelier de cuisine</h2>
   <div class="row">
-    <h5 class="modal-title" id="titre">Atelier</h5>
+    
 
     {{#if currentUser}}
-    <form class="formAtelier my-4">
+    <div class="container d-flex justify-content-center">
+    <form class="formAtelier my-4 ">
 
-      <input type="text" name="picture" placeholder="ajoute une image" />
-      <input type="text" name="title" placeholder="ajoute un titre" />
-      <input type="text" name="describ" placeholder="ajoute la description" />
-      <button type="submit"> Add </button>
+      <input  type="text" name="picture" placeholder="Ajoute une image" />
+      <input  type="text" name="title" placeholder="Ajoute un titre" />
+      <input  type="text" name="describ" placeholder="Ajoute la description" />
+      <button type="submit" class=" btn"> Ajouter </button>
 
     </form>
+  </div>
+
     {{/if}}
 </div>
+<div class="container">
 <div class="row">
       {{#each carte}}
-      <div class="card" style="width: 18rem;">
+     <!-- <div class="card" style="width: 18rem;">-->
         {{> cartes}}
         <ul>
             {{#each inscription}}
             {{> fred}}
             {{/each}}
         </ul>
-      </div>
+      
       {{/each}} 
   </div>
+</div>
 
 
   <div class="collapse" id="collapseExample">
@@ -45,8 +57,8 @@
                 <input type="text" class="form-control" id="nom1" name="nom" placeholder="Nom" />
                 <input type="text" class="form-control" id="prenom1" name="prenom" placeholder="Prénom">
                 <input type="text" class="form-control" id="phone1" name="phone" placeholder="N° de tél">
-                <input type="text" class="form-control" id="mail1" name="mail" placeholder="Enter email">
-                <button type="submit"> Go</button>
+                <input type="text" class="form-control" id="mail1" name="mail" placeholder="Entrez votre email">
+                <button type="submit" class="btn lol">Envoyer</button>
               </form>
 
             </div>
@@ -76,6 +88,7 @@
         {{/if}}
 
           {{#each carte}}
+
           <div class="card" style="width: 18rem;">
            {{> cartes}}
            <ul>
