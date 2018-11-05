@@ -3,9 +3,15 @@ body{
   background-color: #d05c62;
 }
 
+
+
 p {
   font-family: Verdana;
   color:white;
+}
+
+.card-text{
+  color: black;
 }
 
 .suite{
