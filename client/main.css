@@ -3,8 +3,6 @@ body{
   background-color: #d05c62;
 }
 
-
-
 p {
   font-family: Verdana;
   color:white;
@@ -12,6 +10,19 @@ p {
 
 .card-text{
   color: black;
+  text-align: inherit;
+}
+
+.card-subtitle{
+  text-align: left;
+}
+
+.card{
+  margin-bottom: 20px;
+}
+
+#titre{
+  margin-bottom: 30px;
 }
 
 .suite{
@@ -31,12 +42,21 @@ h1{
 
 .bienvenue{
   color:white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.supprime{
+  background-color: white;
 }
 
 h3{
   font-family: 'Roboto', sans-serif;
   text-align: center;
   margin: 20px;
+}
+
+h4{
+  text-align: center;
 }
 
 .ajout{
@@ -62,6 +82,7 @@ h3{
 .liens{
   font-family: Verdana;
   color:#d05c62;
+ font-size: 12px;
 }
 
 .gui{
