@@ -97,11 +97,9 @@ Template.body.events({
     event.preventDefault();
 
 
-    // Pour l'incrementation 
 
-    target.place.value = 0;
-    const place = target.place.value;
-    
+
+
     // Obtenir la valeur de l'élément de formulaire
 
     const target = event.target;
@@ -112,6 +110,13 @@ Template.body.events({
     const Horaires = target.horaire_de_debut.value;
     const Durée = target.durée.value;
     const Prix = target.prix.value;
+
+        // Pour l'incrementation 
+
+        target.place.value = 0;
+        const place = target.place.value;
+
+        console.log(place);
 
     Cartes.insert({
         Picture,
@@ -127,13 +132,13 @@ Template.body.events({
         createdAt: new Date(), // heure actuelle
         });
 
+        
         target.picture.value = '';
         target.title.value = '';
         target.describ.value = '';
         target.date.value = '';
         target.horaire_de_debut.value = '';
         target.durée.value = '';
-        target.Nombre_de_place_disponible.value = '';
         target.prix.value = '';
 
 
@@ -151,12 +156,13 @@ Template.body.events({
     const Dates2 = target.date2.value;
     const Horaires2 = target.horaire_de_debut2.value;
     const Durée2 = target.durée2.value;
-    const Placedispo2= target.Nombre_de_place_disponible2.value;
     const Prix2 = target.prix2.value;
     const id = target.editId.value;
 
+    console.log(id);
+
     Cartes.update(id, {
-        $set: {Picture: Picture2, Title: Title2, Describ: Describ2, Dates: Dates2, Horaires: Horaires2, Durée: Durée2, Placedispo: Placedispo2, Prix: Prix2 }
+        $set: {Picture: Picture2, Title: Title2, Describ: Describ2, Dates: Dates2, Horaires: Horaires2, Durée: Durée2, Prix: Prix2 }
     });
 
     $('#modalModif').modal('hide');
@@ -169,11 +175,25 @@ Template.body.events({
     event.preventDefault();
 
     const target = event.target;
+    const ID = target.editId.value;
+
+    console.log(ID);
     const Name = target.nom.value;
     const firstName = target.prenom.value;
     const Mail = target.mail.value;
     const Phone = target.phone.value;
     const titre2 = target.title11.value;
+
+    // Pour l'incrementation
+
+    let Place = target.contactPlace.value;
+        Place++;
+
+        Cartes.update(ID, {
+            $set: {
+                place: Place,
+            },
+        });
 
     Reserves.insert({
         titre2,
@@ -192,6 +212,8 @@ Template.body.events({
     target.phone.value = '';
 },
 
+// Modifie la carte atelier quand on click sur le bouton 
+
 'click .btn-edit-modif' (event) {
 
     const target = event.target;
@@ -206,9 +228,10 @@ Template.body.events({
     const fourthModif = document.querySelector('#modif4');
     const fiveModif = document.querySelector('#modif5');
     const sixModif = document.querySelector('#modif6');
-    const sevenModif = document.querySelector('#modif7');
     const eightModif = document.querySelector('#modif8');
     const hidden = document.querySelector('#edit-id');
+
+
 
 /*lie les inputs du formulaire au modal*/ 
 
@@ -219,7 +242,6 @@ Template.body.events({
     fourthModif.value = modif.Dates;
     fiveModif.value = modif.Horaires;
     sixModif.value = modif.Durée;
-    sevenModif.value = modif.Placedispo;
     eightModif.value = modif.Prix;
 
 },
@@ -237,10 +259,20 @@ Template.body.events({
     const secondModif = document.querySelector('#modif11');
     const thirdModif = document.querySelector('#modif3');
 
-  
+// Pour l'incrementation
+
+    const contactPlace = document.querySelector('#contact-place');
+    
+    console.log(contactPlace);
+
+    
+
+    contactPlace.value = modif.place;
     hidden.value = modif._id;
     secondModif.value = modif.Title;
     thirdModif.value = modif.Describ;
+
+    console.log(contactPlace.value);
 
 },
 
