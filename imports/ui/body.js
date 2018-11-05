@@ -96,6 +96,12 @@ Template.body.events({
     
     event.preventDefault();
 
+
+    // Pour l'incrementation 
+
+    target.place.value = 0;
+    const place = target.place.value;
+    
     // Obtenir la valeur de l'élément de formulaire
 
     const target = event.target;
@@ -105,7 +111,6 @@ Template.body.events({
     const Dates = target.date.value;
     const Horaires = target.horaire_de_debut.value;
     const Durée = target.durée.value;
-    const Placedispo = target.Nombre_de_place_disponible.value;
     const Prix = target.prix.value;
 
     Cartes.insert({
@@ -115,8 +120,10 @@ Template.body.events({
         Dates,
         Horaires,
         Durée,
-        Placedispo,
         Prix,
+
+        place, //Pour l'incrementation
+
         createdAt: new Date(), // heure actuelle
         });
 
