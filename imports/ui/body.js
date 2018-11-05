@@ -157,12 +157,13 @@ Template.body.events({
     const Horaires2 = target.horaire_de_debut2.value;
     const Durée2 = target.durée2.value;
     const Prix2 = target.prix2.value;
+    const Place2 = target.place2.value;
     const id = target.editId.value;
 
     console.log(id);
 
     Cartes.update(id, {
-        $set: {Picture: Picture2, Title: Title2, Describ: Describ2, Dates: Dates2, Horaires: Horaires2, Durée: Durée2, Prix: Prix2 }
+        $set: {Picture: Picture2, Title: Title2, Describ: Describ2, Dates: Dates2, Horaires: Horaires2, Durée: Durée2, Prix: Prix2, place: Place2 }
     });
 
     $('#modalModif').modal('hide');
@@ -174,26 +175,34 @@ Template.body.events({
 
     event.preventDefault();
 
-    const target = event.target;
-    const ID = target.editId.value;
 
-    console.log(ID);
+    const target = event.target;
+    
     const Name = target.nom.value;
     const firstName = target.prenom.value;
     const Mail = target.mail.value;
     const Phone = target.phone.value;
     const titre2 = target.title11.value;
+    const id = target.editId.value;
+
+console.log(id);
 
     // Pour l'incrementation
 
     let Place = target.contactPlace.value;
-        Place++;
 
-        Cartes.update(ID, {
-            $set: {
-                place: Place,
-            },
-        });
+    if(Place == 10) alert('Plus de place disponible');
+    else Place++;
+    
+    
+
+     console.log(Place);
+
+    Cartes.update(id, {
+        $set: {
+            place: Place,
+        },
+    });
 
     Reserves.insert({
         titre2,
@@ -230,12 +239,13 @@ Template.body.events({
     const sixModif = document.querySelector('#modif6');
     const eightModif = document.querySelector('#modif8');
     const hidden = document.querySelector('#edit-id');
-
+    const Modifplace = document.querySelector('#modifPlace');
 
 
 /*lie les inputs du formulaire au modal*/ 
 
-    hidden.value = idModif;
+    hidden.value = modif._id;
+    Modifplace.value = modif.place;
     firstModif.value = modif.Picture;
     secondModif.value = modif.Title;
     thirdModif.value = modif.Describ;
@@ -255,22 +265,23 @@ Template.body.events({
 
 /*Permet de recupérer l'id des inputs*/
 
-    const hidden = document.querySelector('#edit-id');
+    const hidden = document.querySelector('#edit-id2');
     const secondModif = document.querySelector('#modif11');
-    const thirdModif = document.querySelector('#modif3');
+    const thirdModif = document.querySelector('#modif12');
+
+    console.log(hidden);
 
 // Pour l'incrementation
 
     const contactPlace = document.querySelector('#contact-place');
-    
-    console.log(contactPlace);
 
     
 
-    contactPlace.value = modif.place;
+
     hidden.value = modif._id;
     secondModif.value = modif.Title;
     thirdModif.value = modif.Describ;
+    contactPlace.value = modif.place;
 
     console.log(contactPlace.value);
 
