@@ -6,26 +6,23 @@
         <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-light p-4">
-
                     <!-- Bouton pour se connecter-->
                     <div class="container" style="width:25em;">
-                    {{> atForm}}
-                    {{#if currentUser}}
-                    <div class="d-flex justify-content-center ">
-                    {{> atNavButton}}
+                        {{> atForm}}
+                        {{#if currentUser}}
+                            <div class="d-flex justify-content-center ">
+                            {{> atNavButton}}
+                            </div>
+                        {{/if}}
+                    
                     </div>
-                    {{/if}}
-                    
-                </div>
-                    
-
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-               <a href="#jumbo" class="liens nav-link">Présentation</a>
+                <a href="#jumbo" class="liens nav-link">Présentation</a>
                 <a href="#titre" class="liens nav-link">Nos ateliers</a>
                 <a href="#contact" class="liens nav-link">Contactez nous</a>
                 <img src="images/logo.png" alt="logo-atelier-cuisine" width="45px">
