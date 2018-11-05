@@ -1,28 +1,48 @@
 body{
   font-family: Verdana;
-  background-color: #d05c62;
+  background-color: #e9ecef;
 }
 
 p {
   font-family: Verdana;
-  color:white;
+  color:black;
+}
+
+.card-title{
+  color: grey;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card-text{
-  color: black;
+  color: white;
   text-align: inherit;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card-subtitle{
   text-align: left;
+  color: white;
 }
 
 .card{
   margin-bottom: 20px;
 }
 
+.card-body{
+  background-color: #f3671f;
+}
+
+.card.card-body{
+  background-color: white;
+}
+
 #titre{
   margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#titreCarte{
+  color: white;
 }
 
 .suite{
@@ -41,7 +61,7 @@ h1{
 }
 
 .bienvenue{
-  color:white;
+  color: #f3671f;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -53,35 +73,22 @@ h3{
   font-family: 'Roboto', sans-serif;
   text-align: center;
   margin: 20px;
+  color: grey;
 }
 
 h4{
   text-align: center;
+  color: grey;
 }
 
 .ajout{
   margin-bottom: 17px;
 }
 
-.reservation{
-  background-color: #f3671f;
-}
-
-.containe{
-  background-color: #f3671f;
-}
-
-#jumbo{
-  background-color: #f3671f;
-}
-
-.formInsc{
-  background-color: #f3671f;
-}
 
 .liens{
   font-family: Verdana;
-  color:#d05c62;
+  color: #f3671f;
  font-size: 12px;
 }
 
@@ -93,13 +100,10 @@ h4{
   color:white;
 }
 
-.foot{
-  background-color: #d05c62;
-}
 
 .liens:hover{
   font-family: Verdana;
-color:#f3671f;
+color: #d05c62;
 }
 
 .btn{
@@ -114,7 +118,7 @@ font-family: Verdana;
 }
 
 .form{
-  background-color:#d05c62;
+  background-color:#e9ecef;
   font-family: Verdana;
   margin-top: 10px;
 }
