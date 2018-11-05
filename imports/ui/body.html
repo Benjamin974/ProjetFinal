@@ -9,106 +9,50 @@
   <!-- Space-bar qui sert à afficher les templates -->
 
 {{> nav}}
-{{> carou}}
 {{> jumbo}}
 
-
-{{> atelier}}
-<div class="containe" style="background-color:#d05c62">
-    <h2 class="modal-title" id="titre" style="text-align:center; padding-top:20px; color:white;" >Recherchez un atelier de cuisine</h2>
-  <div class="row">
-    
-
-    {{#if currentUser}}
-    <div class="container d-flex justify-content-center">
-    <form class="formAtelier my-4 ">
-
-      <input  type="text" name="picture" placeholder="Ajoute une image" />
-      <input  type="text" name="title" placeholder="Ajoute un titre" />
-      <input  type="text" name="describ" placeholder="Ajoute la description" />
-      <button type="submit" class=" btn"> Ajouter </button>
-
-    </form>
-  </div>
-
-    {{/if}}
-</div>
-<div class="container">
-<div class="row">
-      {{#each carte}}
-     <!-- <div class="card" style="width: 18rem;">-->
-        {{> cartes}}
-        <ul>
-            {{#each inscription}}
-            {{> fred}}
-            {{/each}}
-        </ul>
+<div class="containe">
+      <h2 class="modal-title" id="titre" style="text-align:center; padding-top:20px; color:white;" >Sélectionnez parmis nos 
+        différents ateliers 
+          que nous proposons pour réussir vos recettes préférées.</h2>
+    <div class="row">
       
-      {{/each}} 
+
+      {{#if currentUser}}
+      <div class="container d-flex justify-content-center">
+      <form class="formAtelier my-4 ">
+        <textarea type="text" name="picture" placeholder="Ajoutez une image" ></textarea>
+        <textarea type="text" name="title" placeholder="Ajoutez un titre" ></textarea>
+        <textarea type="text" name="describ" placeholder="Ajoutez la description" ></textarea>
+        <textarea type="text" name="date" placeholder="Ajoutez une date"></textarea>
+        <textarea type="text" name="horaire_de_debut" placeholder="Ajoutez l'horaire de début" ></textarea>
+        <input type="text" name="durée" placeholder="Ajoutez la durée" />
+        <input type="text" name="Nombre_de_place_disponible" placeholder="Ajoutez des places disponibles" />
+        <input type="text" name="prix" placeholder="Ajoutez le prix" />
+        <button type="submit" class=" btn"> Ajouter </button>
+
+      </form>
+    </div>
+
+      {{/if}}
   </div>
+  <div class="container">
+  <div class="row">
+        {{#each carte}}
+          {{> cartes}}
+        {{/each}} 
+    </div>
+  </div>
+
 </div>
 
+<div class="container">
+  <div class="row">
+    {{#each reserves}}
+    
+    {{> Reservation}}
 
-  <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-
-            <div class="form-group">
-              <form class="formulair">
-                <input type="text" class="form-control" id="nom1" name="nom" placeholder="Nom" />
-                <input type="text" class="form-control" id="prenom1" name="prenom" placeholder="Prénom">
-                <input type="text" class="form-control" id="phone1" name="phone" placeholder="N° de tél">
-                <input type="text" class="form-control" id="mail1" name="mail" placeholder="Entrez votre email">
-                <button type="submit" class="btn lol">Envoyer</button>
-              </form>
-
-            </div>
-
-      </div>
-    </div>
-
-</div>
-<!-- Modal des ateliers -->
-
-<div class="modal fade" id="modalAtelier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
- 
-        <h5 class="modal-title" id="titre">Atelier</h5>
-        <div class="row">
-          {{#if currentUser}}
-        <form class="formAtelier my-4">
-
-          <input type="text" name="picture" placeholder="ajoute une image" />
-          <input type="text" name="title" placeholder="ajoute un titre" />
-          <input type="text" name="describ" placeholder="ajoute la description" />
-          <button type="submit"> Add </button>
-
-        </form>
-        {{/if}}
-
-          {{#each carte}}
-
-          <div class="card" style="width: 18rem;">
-           {{> cartes}}
-
-               {{#each inscription}}
-               {{> fred}}
-               {{/each}}
-
-          </div>
-          {{/each}} 
-      </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-      </div>
-
-    </div>
+    {{/each}}
   </div>
 </div>
 
@@ -125,16 +69,58 @@
       </div>
       <div class="modal-body">
         <form class="modalModif">
-
+          <h6><strong> l'image</strong></h6>
           <input type="text" name="picture2" id="modif1">
+          <h6><strong>Modifiez le titre</strong></h6>
           <input type="text" name="title2" id="modif2">
-          <input type="text" name="describ2" id="modif3">
+          <h6><strong>Modifiez la description</strong></h6>
+          <textarea type="text" name="describ2" id="modif3"></textarea>
+          <h6><strong>Modifiez la date</strong></h6>
+          <input type="text" name="date2" id="modif4" />
+          <h6><strong>Modifiez les horaires</strong></h6>
+          <input type="text" name="horaire_de_debut2" id="modif5" />
+          <h6><strong>Modifiez l'image</strong></h6>
+          <input type="text" name="durée2" id="modif6" />
+          <h6><strong>Modifiez le nombre de places disponibles</strong></h6>
+          <input type="text" name="Nombre_de_place_disponible2" id="modif7" />
+          <h6><strong>Modifiez le prix</strong></h6>
+          <input type="text" name="prix2" id="modif8" />
           <input type="hidden" name="editId" id="edit-id">
+
           <button type="submit" class="btn btn-primary">modifier</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"> RESERVATION </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <div class="modal-body">
+            <form class="reservation">
+              <!--Modal de reservation-->  
+            <input type="hidden" name="title11" id="modif11">
+            <input type="hidden" name="describ12" id="modif12">
+            <input type="hidden" name="editId" id="edit-id">
+            <input type="text" name="nom" placeholder="Entrez votre nom">
+            <input type="text" name="prenom" placeholder="Entrez votre prénom">
+            <input type="text" name="phone" placeholder="Entrez votre n° de téléphone">
+            <input type="text" name="mail" placeholder="Entrez votre email">
+          <button type="submit" class="btn reserv my-2">Reserver</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{{> footer}}
+{{> footer2}}
 
 </body>

@@ -1,4 +1,7 @@
-
+body{
+  font-family: Verdana;
+  background-color: #d05c62;
+}
 
 p {
   font-family: Verdana;
@@ -22,21 +25,48 @@ h3{
   margin: 20px;
 }
 
+.reservation{
+  background-color: #f3671f;
+}
+
+.containe{
+  background-color: #f3671f;
+}
+
+#jumbo{
+  background-color: #f3671f;
+}
+
+.formInsc{
+  background-color: #f3671f;
+}
+
 .liens{
   font-family: Verdana;
   color:#d05c62;
 }
 
-.liens:hover{
-  font-family: Verdana;
-color:#f3671f
+.gui{
+  background-color: #e9ecef;
 }
 
+#foot{
+  color:white;
+}
 
+.foot{
+  background-color: #d05c62;
+}
+
+.liens:hover{
+  font-family: Verdana;
+color:#f3671f;
+}
 
 .btn{
-background-color: #f3671f;
+background: #d05c62;
 color:white;
+font-family: Verdana;
 }
 
 .btn:hover{
@@ -44,9 +74,8 @@ color:white;
   color:white;
 }
 
-.lol{
+.form{
+  background-color:#d05c62;
+  font-family: Verdana;
   margin-top: 10px;
 }
-
-
-
