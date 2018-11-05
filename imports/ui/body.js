@@ -190,7 +190,7 @@ console.log(id);
     // Pour l'incrementation
 
     let Place = target.contactPlace.value;
-    if(Place == 10) alert('Plus de place disponible');
+    if(Place == 5) alert('Plus de place disponible');
     else Place++;
     
     
@@ -308,5 +308,6 @@ Template.cartes.events({
 Template.Reservation.events({
     'click .supprime'() {
         Reserves.remove(this._id);
+
         },
 });
