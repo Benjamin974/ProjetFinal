@@ -190,7 +190,6 @@ console.log(id);
     // Pour l'incrementation
 
     let Place = target.contactPlace.value;
-
     if(Place == 10) alert('Plus de place disponible');
     else Place++;
     
