@@ -5,3 +5,9 @@ import '../imports/api/carte.js';
 Meteor.startup(() => {
   // code to run on server at startup
 });
+
+// Pour supprimer le register
+
+AccountsTemplates.configure({ 
+  forbidClientAccountCreation : true 
+}); 

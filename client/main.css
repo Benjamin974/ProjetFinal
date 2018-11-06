@@ -122,3 +122,9 @@ font-family: Verdana;
   font-family: Verdana;
   margin-top: 10px;
 }
+
+/* Pour supprimer le register */
+
+.at-signup-link { 
+  display: none; 
+} 
