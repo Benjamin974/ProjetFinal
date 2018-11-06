@@ -289,14 +289,7 @@ console.log(id);
 
 });
 
-/*supprime le membre de la collection Inscrits*/ 
-Template.fred.events({
-    'click .deleted'() {
-    Inscrits.remove(this._id);
-    },
 
-
-});
 /*supprime le membre de la collection Cartes*/ 
 Template.cartes.events({
     'click .suppr'() {
