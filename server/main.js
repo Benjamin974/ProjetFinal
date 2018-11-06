@@ -8,6 +8,6 @@ Meteor.startup(() => {
 
 // Pour supprimer le register
 
-AccountsTemplates.configure({ 
+/*AccountsTemplates.configure({ 
   forbidClientAccountCreation : true 
-}); 
+}); */
